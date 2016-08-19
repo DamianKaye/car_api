@@ -1,8 +1,4 @@
 {
-  "success": true,
-  "head": {
-    "action": "locations"
-  },
   "locations": [
     {
       "vehicleCount": "1",
