@@ -17,10 +17,10 @@ ActiveRecord::Schema.define(version: 20160819123939) do
   enable_extension "postgis"
 
   create_table "car_locations", force: :cascade do |t|
-    t.string    "description"
-    t.geography "lonlat",      limit: {:srid=>4326, :type=>"point", :geographic=>true}
-    t.datetime  "created_at",                                                           null: false
-    t.datetime  "updated_at",                                                           null: false
+    t.string   "description",                                       null: false
+    t.geometry "lonlat",      limit: {:srid=>4326, :type=>"point"}, null: false
+    t.datetime "created_at",                                        null: false
+    t.datetime "updated_at",                                        null: false
     t.index ["lonlat"], name: "index_car_locations_on_lonlat", using: :gist
   end
 
