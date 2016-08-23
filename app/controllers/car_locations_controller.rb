@@ -16,8 +16,7 @@ class CarLocationsController < ApplicationController
   private
 
   def filter_params
-    raise ApiError::BadRequestError if params["location"].blank?
-
+    raise ApiError::BadRequestError.new("Location param is missing") if params["location"].blank?
     params.slice("location")
   end
 end

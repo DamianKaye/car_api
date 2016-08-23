@@ -1,5 +1,8 @@
 class CarLocation < ApplicationRecord
 
+  validates :description, presence: true
+  validates :lonlat, presence: true
+
   scope :closest, ->(lon, lat, num_cars) { 
     order(sanitize_sql(["lonlat::geometry <-> 'SRID=4326;POINT(? ?)'::geometry", lon, lat])).limit(num_cars) 
   }
@@ -11,5 +14,4 @@ class CarLocation < ApplicationRecord
   def longitude
     lonlat.x
   end
-
 end

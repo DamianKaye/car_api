@@ -4,14 +4,12 @@ class ApplicationController < ActionController::API
 
   def api_error(status: 500, errors: "Something went wrong")
     head status: status and return if errors.empty?
-
     render json: { errors: errors }.to_json, status: status
   end
 
   private
 
-  def bad_request
-     api_error status: 400, errors: 'Bad Request'
+  def bad_request(e)
+     api_error status: 400, errors: "Bad Request: #{e.message}"
   end
-
 end
