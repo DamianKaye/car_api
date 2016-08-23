@@ -1,0 +1,17 @@
+In order to test this solution you will need to make sure you have version 2.0+ of postgis, version 9.0+ of PostgreSQL and version Ruby 2.2.2+ installed.
+
+Clone the repo and run these instructions:
+
+- bundle install
+- rake db:create db:migrate db:seed
+- rails s  (spin up a local server)
+- use google postman app or some curl client to hit the API /cars endpoint
+- enter the following url as a GET request:  http://localhost:3000/cars?location=51.5444204,-0.22707
+
+To run all rspec tests:
+
+- "rspec spec"
+
+Extra Notes:
+
+- Used google maps for location testing and data for my rspec tests.
