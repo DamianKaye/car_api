@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :car_location do
-    description Faker::Lorem.sentence
-    lonlat "Point(#{Faker::Address.longitude} #{Faker::Address.latitude}"
+    description "test description"
+    lonlat "Point(-.297732 51.514251}"
 
     factory :hamilton_location do
       description "Ealing Broadway - Hamilton Rd"
